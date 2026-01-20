@@ -41,19 +41,6 @@ The layout is fully responsive and adjusts based on the screen size:
   - Flexbox and Grid for layout.
   - CSS Variables for maintainable theming.
   - Media Queries for responsiveness.
-
----
-
-## 📸 Screenshots
-
-### Desktop View
-
-![Desktop View](assets/desktop_view.png)
-
-### Mobile View
-
-![Mobile View](assets/mobile_view.png)
-
 ---
 
 ## 🚀 How to Run the Project
