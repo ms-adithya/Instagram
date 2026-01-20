@@ -1,0 +1,519 @@
+:root {
+  --primary-color: rgb(49, 67, 227);
+  --secondary-color: rgb(106, 113, 122);
+  --text-color: rgb(12, 16, 20);
+  --background-color: rgb(250, 250, 250);
+  --system-14-font-size: 14px;
+  --system-12-font-size: 12px;
+  --system-18-line-height: 18px;
+  --system-16-line-height: 16px;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("./fonts/Segoe\ UI.ttf");
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Main container layout */
+#main {
+  display: flex;
+}
+
+#sidebar {
+  height: 100vh;
+  width: 14%;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar > img {
+  margin: 20px 0px 10px 20px;
+  width: 30px;
+  height: 30px;
+}
+
+#sidebar ul li span {
+  visibility: hidden;
+  transition: opacity 0.2s ease-out;
+}
+
+/* Show only the icons by default */
+#sidebar ul li img {
+  visibility: visible;
+}
+
+/* When the sidebar is hovered, show the text and the icons */
+#sidebar:hover ul li span {
+  visibility: visible;
+}
+
+#sidebar > ul {
+  list-style: none;
+  margin-top: 24px;
+  color: var(--text-color);
+  font-size: var(--system-16-font-size);
+  line-height: 1.5; /* Relative to font size */
+}
+
+#sidebar > ul > li {
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+}
+
+#sidebar > ul > li > img {
+  padding-right: 16px;
+}
+
+/* Highlight the active navigation item */
+#sidebar ul li.active span {
+  font-weight: bold;
+}
+
+#main-scrollable-container {
+  height: 100vh;
+  width: 86%;
+  overflow-y: scroll;
+  padding: 30px;
+  position: relative;
+}
+
+#main-scrollable-container > div {
+  max-width: 630px;
+  width: 100%;
+}
+
+#stories-section {
+  display: flex;
+  padding: 8px 9px 8px 9px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 108px;
+  width: 90px;
+}
+
+.story > p {
+  color: var(--text-color); /* Text color for the story username */
+  text-align: center;
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-16-line-height);
+  letter-spacing: 0.12px;
+}
+
+.stories-image {
+  width: 89px;
+  height: 89px;
+  background-image: url("./assets/story_frame.svg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stories-image > img {
+  width: 74px; /* Adjust the size of the image inside the circle */
+  height: 74px;
+  border-radius: 50%; /* Ensure the image remains circular */
+}
+
+footer {
+  width: 319px;
+  height: auto;
+  position: absolute;
+  top: 36px;
+  right: 220px;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+#user_profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#user_profile_left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#user_profile_left > img {
+  height: 44px;
+  width: 44px;
+  margin-right: 17px;
+}
+
+#user_profile_left > div > h4 {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+}
+
+#user_profile_left > div > p {
+  color: var(--secondary-color);
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+  font-weight: 400;
+}
+
+#user_profile > a {
+  color: var(--primary-color);
+  justify-content: center;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-18-line-height);
+  display: inline-flex;
+}
+
+#user_profile > a:hover {
+  text-decoration: underline;
+}
+
+#footer_suggestions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+#footer_suggestions > h5 {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+}
+
+#footer_suggestions > div > a {
+  color: var(--text-color);
+  justify-content: center;
+  display: inline-flex;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-16-line-height);
+}
+
+#footer_suggestions > div > a:hover {
+  color: var(--secondary-color);
+}
+
+#user_suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 315px;
+  height: 324px;
+}
+
+.suggestion_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.suggestion_div_left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 17px;
+}
+
+.suggestion_div_left > img {
+  height: 44px;
+  width: 44px;
+  margin-left: 4px;
+  border-radius: 50%;
+}
+
+.suggestion_div_left > div > h4 {
+  color: var(--text-color);
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+  font-weight: 600;
+}
+
+.suggestion_div_left > div > p {
+  color: var(--secondary-color);
+  font-size: var(--system-12-font-size);
+  font-weight: 400;
+  line-height: var(--system-16-line-height);
+}
+
+.suggestion_div > a {
+  color: var(--primary-color);
+  justify-content: center;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--system-12-font-size);
+  display: inline-flex;
+  line-height: var(--system-16-line-height);
+  margin: -2px 0 -3px;
+}
+
+#footer_more {
+  margin-top: 20px;
+  padding-bottom: 33px;
+}
+
+#footer_links > a {
+  color: var(--secondary-color);
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-16-line-height);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#footer_copyright {
+  color: var(--secondary-color);
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-16-line-height);
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+#posts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: static;
+  align-self: auto;
+  justify-content: flex-start;
+}
+
+.post {
+  width: 470px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+}
+
+.post_header {
+  display: flex;
+  padding: 0px 10px 12px 14px;
+  justify-content: space-between;
+}
+
+.post_header > div {
+  display: flex;
+  align-items: center;
+}
+
+.post_header > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 8px;
+}
+
+.user_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/story_frame.svg");
+  width: 41px;
+  height: 41px;
+  background-size: 100% 100%;
+  margin-right: 12px;
+}
+
+.user_image > img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.post_user {
+  color: var(--text-color);
+  font-size: var(--system-14-font-size);
+  font-weight: 600;
+  line-height: var(--system-18-line-height);
+  margin-right: 4px;
+}
+
+.post_time {
+  color: var(--secondary-color);
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+  margin-left: 4px;
+}
+
+.post_image > img {
+  max-width: 100%;
+  box-sizing: border-box;
+  border-bottom-width: 1px;
+  border-radius: 2%;
+}
+
+.post_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin: 4px 0px 4px 0px;
+}
+
+.post_buttons_left {
+  display: flex;
+  align-items: center;
+}
+
+.post_buttons_left > img {
+  padding: 8px;
+}
+
+.post_actions_count {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+  margin: 0px 4px 0px -2px;
+  align-items: center;
+}
+
+.post_buttons_right > img {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  padding: 8px 16px 8px 0px;
+}
+
+.post_caption {
+  padding: 0px 8px 8px 8px;
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-18-line-height);
+}
+
+.post_view_translation {
+  color: var(--text-color);
+  padding: 0px 8px 8px 8px;
+  position: relative;
+  font-size: var(--system-12-font-size);
+  line-height: var(--system-16-line-height);
+  font-weight: 600;
+}
+
+/* Default Footer Visibility */
+footer {
+  display: block; /* Visible by default */
+}
+
+/* Media Query for Medium Screens (Tablets) */
+@media (max-width: 1440px) {
+  footer {
+    display: none; /* Hide footer on medium-large screens */
+  }
+}
+@media (max-width: 1024px) {
+  #sidebar {
+    width: 20%; /* Adjust sidebar width */
+  }
+
+  #main-scrollable-container {
+    width: 80%; /* Adjust main container width */
+  }
+
+  .post {
+    width: 100%; /* Make posts take full width */
+  }
+}
+
+/* Media Query for Small Screens (Mobile) */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 25%; /* Further reduce sidebar width */
+  }
+
+  #main-scrollable-container {
+    width: 75%; /* Adjust main container width */
+    padding: 16px; /* Reduce padding for smaller screens */
+  }
+
+  .story {
+    width: 70px; /* Reduce story size */
+    height: 90px;
+  }
+
+  .stories-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stories-image > img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .post {
+    width: 100%; /* Posts take full width */
+    margin-bottom: 16px; /* Reduce spacing between posts */
+  }
+
+  .post_buttons {
+    grid-template-columns: 1fr; /* Stack buttons vertically */
+    height: auto;
+  }
+
+  .post_buttons_left {
+    justify-content: space-between;
+  }
+}
+
+/* Media Query for Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+  #sidebar {
+    width: 30%; /* Further reduce sidebar width */
+  }
+
+  #main-scrollable-container {
+    width: 70%; /* Adjust main container width */
+    padding: 8px; /* Further reduce padding */
+  }
+
+  .story {
+    width: 60px; /* Further reduce story size */
+    height: 80px;
+  }
+
+  .stories-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stories-image > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post_caption {
+    font-size: var(--system-12-font-size); /* Reduce caption font size */
+  }
+
+  .post_view_translation {
+    font-size: var(--system-12-font-size); /* Reduce translation font size */
+  }
+}
