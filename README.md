@@ -60,7 +60,7 @@ The layout is fully responsive and adjusts based on the screen size:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/instagram-like-interface.git
+   git clone https://github.com/ms-adithya/Instagram.git
    ```
 2. Navigate to the project directory
    cd instagram-like-interface
